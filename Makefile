@@ -11,3 +11,7 @@ metrics:
 	
 evaluate:
 	python src/evaluate.py
+
+# Test
+test:
+	pytest tests/test_prompts.py -v --tb=short

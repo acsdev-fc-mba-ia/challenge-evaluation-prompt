@@ -8,20 +8,33 @@ bug_to_user_story_v2:
     # PROCESSO DE RACIOCÍNIO (Chain-of-Thought)
     ════════════════════════════════════════════════════════════════════
 
-    Antes de escrever, raciocine passo a passo:
+    Raciocine internamente nesta ordem antes de escrever. 
+    NÃO imprima o raciocínio — entregue apenas a User Story final.
 
-    1. O bug é comportamento do SISTEMA (validação, segurança, regra de negócio no backend)? Se sim → persona "Como o sistema" ou "Como o sistema de [domínio]".
-
-    2. O bug é EXPERIÊNCIA DO USUÁRIO (UI quebrada, lentidão, mensagem errada)? Se sim → persona "Como um [tipo de usuário]".
-
-    3. O bug tem MÚLTIPLOS problemas críticos, impacto severo de negócio e detalhes técnicos extensos? → Formato COMPLEXO com seções A/B/C/D e headers ===.
-
-    4. Qual o SLA de NEGÓCIO esperado? Use metas razoáveis (ex: <30s para relatórios, <3s para dashboards), não o tempo atual de falha.
-
-    5. Baseie-se SOMENTE nas informações presentes no bug. Não inclua IDs específicos (ex: "produto ID 1234") nos critérios de aceitação.
+    PASSO 1 - Defina persona "Como o sistema" ou "Como o sistema de [domínio]" se o bug é comportamento do SISTEMA (validação, segurança, regra de negócio no backend).
     
-    6. Para bugs complexos com múltiplos problemas, o perfil do usuário é quem SOFRE o impacto no negócio (ex: para dashboards gerenciais → "um executivo"), não quem reporta o bug.
+    PASSO 2 - Defina persona "Como um [tipo de usuário]" se o bug é EXPERIÊNCIA DO USUÁRIO (UI quebrada, lentidão, mensagem errada).
 
+    PASSO 3 - Classifique o bug pela ESTRUTURA do relato (NÃO pelo tipo de bug), entre SIMPLES, MÉDIO e COMPLEXO:
+      
+      1) SIMPLES
+
+        - UM ÚNICO problema; relato de 1-2 frases, SEM bloco de detalhes estruturado (apenas o sintoma observável)
+      
+      2) MÉDIO
+
+        - UM ÚNICO problema, mas COM um bloco de detalhes estruturado (Steps to reproduce, Detalhes, Fluxo do bug, Cenário, Observações, Exemplo, logs ou endpoints)
+      
+      3) COMPLEXO
+
+        - 3 OU MAIS problemas distintos, enumerados sob um cabeçalho (ex: "PROBLEMAS IDENTIFICADOS")
+        - Bloco de IMPACTO com métricas de negócio (clientes afetados, perda em R$, queda de rating/NPS, churn)
+        - Detalhes técnicos extensos
+
+     PASSO 4 - Escolha o template de saída adequado à complexidade identificada
+
+     PASSO 5 - Escreva a User Story com base na persona definida e template escolhido.
+     
     ════════════════════════════════════════════════════════════════════
     # TEMPLATES DE SAÍDA
     ════════════════════════════════════════════════════════════════════
@@ -118,6 +131,7 @@ bug_to_user_story_v2:
     ────────────────────────────────────────────────────────────────────
 
     ENTRADA (simples): "Botão de adicionar ao carrinho não funciona no produto ID 1234."
+
     SAÍDA:
     Como um cliente navegando na loja, eu quero adicionar produtos ao meu carrinho de compras, para que eu possa continuar comprando e finalizar minha compra depois.
 
@@ -131,6 +145,7 @@ bug_to_user_story_v2:
     --------------------------------------------------------------------
 
     ENTRADA (simples, cross-browser): "Imagens de produtos não aparecem no Safari. No Chrome funciona normal."
+
     SAÍDA:
     Como um cliente usando Safari, eu quero visualizar as imagens dos produtos, para que eu possa avaliar os itens antes de comprar.
 
@@ -146,6 +161,7 @@ bug_to_user_story_v2:
     ────────────────────────────────────────────────────────────────────
 
     ENTRADA (simples, dados incorretos): "Dashboard mostra contagem errada de usuários ativos. Mostra 50 mas só há 42 na lista."
+
     SAÍDA:
     Como um administrador visualizando o dashboard, eu quero ver a contagem correta de usuários ativos, para que eu possa tomar decisões baseadas em dados precisos.
 
@@ -166,6 +182,7 @@ bug_to_user_story_v2:
     - Apenas admins deveriam ver dados de outros usuários
 
     Severidade: ALTA - vazamento de dados pessoais"
+
     SAÍDA:
     Como o sistema, eu quero validar permissões antes de retornar dados de usuários, para que apenas usuários autorizados possam acessar informações pessoais de outros usuários.
 
@@ -199,6 +216,7 @@ bug_to_user_story_v2:
     4. Cliente B ainda consegue adicionar ao carrinho
     5. Cliente B finaliza compra
     6. Sistema gera pedido mas não tem estoque para enviar"
+
     SAÍDA:
     Como o sistema de e-commerce, eu quero validar disponibilidade de estoque antes de permitir finalização de compra, para que não sejam criados pedidos que não podem ser atendidos.
 
@@ -229,6 +247,7 @@ bug_to_user_story_v2:
     - Query SQL está sem index na coluna data_venda
     - Timeout do navegador após 120 segundos
     - Usuários reclamando de lentidão no horário comercial"
+
     SAÍDA:
     Como um gerente de vendas, eu quero gerar relatórios de vendas rapidamente mesmo com grandes volumes de dados, para que eu possa analisar informações sem esperar longos períodos.
 
@@ -273,6 +292,7 @@ bug_to_user_story_v2:
     - 150+ clientes afetados na última semana
     - Perda estimada: R$ 15.000 em cupons indevidos
     - Rating do app caiu de 4.5 para 3.2 estrelas"
+
     SAÍDA:
     Como um cliente finalizando minha compra, eu quero um processo de checkout seguro, confiável e com feedback claro, para que eu possa completar minhas compras sem preocupações ou frustrações.
 
@@ -392,6 +412,7 @@ bug_to_user_story_v2:
     IMPACTO:
     - 15 clientes enterprise ameaçando cancelar contrato
     - CEO não confia nos números para apresentar ao board"
+
     SAÍDA:
     Como um executivo usando o sistema de relatórios, eu quero visualizar métricas precisas e atualizadas em tempo hábil, para que eu possa tomar decisões estratégicas baseadas em dados confiáveis.
 

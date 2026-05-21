@@ -10,7 +10,7 @@ Modelo de Avaliação: gpt-4o
 
 Criando dataset de avaliação: FC_Challenge_Prompt_Evaluation V2.0-eval...
    ✓ Carregados 15 exemplos do arquivo datasets/bug_to_user_story.jsonl
-   ✓ Dataset criado com 15 exemplos
+   ✓ Dataset 'FC_Challenge_Prompt_Evaluation V2.0-eval' já existe, usando existente
 
 ======================================================================
 PROMPTS PARA AVALIAR
@@ -26,42 +26,42 @@ Certifique-se de ter feito push dos prompts antes de avaliar:
    ✓ Prompt carregado com sucesso
    Dataset: 15 exemplos
    Avaliando exemplos...
-      [1/15] F1:0.85 Clarity:0.90 Precision:0.90
-      [2/15] F1:0.75 Clarity:0.90 Precision:0.90
-      [3/15] F1:0.85 Clarity:0.90 Precision:0.80
-      [4/15] F1:0.58 Clarity:0.85 Precision:0.80
-      [5/15] F1:0.69 Clarity:0.90 Precision:0.80
-      [6/15] F1:0.85 Clarity:0.90 Precision:0.90
-      [7/15] F1:0.75 Clarity:0.90 Precision:0.90
-      [8/15] F1:0.75 Clarity:0.90 Precision:0.90
-      [9/15] F1:0.65 Clarity:0.85 Precision:0.70
-      [10/15] F1:0.65 Clarity:0.85 Precision:0.80
-      [11/15] F1:0.80 Clarity:0.80 Precision:0.80
-      [12/15] F1:0.48 Clarity:0.90 Precision:0.80
-      [13/15] F1:0.80 Clarity:0.85 Precision:0.90
-      [14/15] F1:0.80 Clarity:0.85 Precision:0.90
-      [15/15] F1:0.65 Clarity:0.75 Precision:0.67
+      [1/15] F1:0.75 Clarity:0.90 Precision:0.90
+      [2/15] F1:0.95 Clarity:0.90 Precision:1.00
+      [3/15] F1:1.00 Clarity:0.95 Precision:1.00
+      [4/15] F1:0.69 Clarity:0.85 Precision:0.83
+      [5/15] F1:0.90 Clarity:1.00 Precision:1.00
+      [6/15] F1:0.90 Clarity:0.90 Precision:0.90
+      [7/15] F1:0.85 Clarity:0.85 Precision:0.90
+      [8/15] F1:1.00 Clarity:1.00 Precision:1.00
+      [9/15] F1:1.00 Clarity:1.00 Precision:1.00
+      [10/15] F1:0.80 Clarity:0.85 Precision:0.80
+      [11/15] F1:1.00 Clarity:1.00 Precision:1.00
+      [12/15] F1:1.00 Clarity:0.95 Precision:0.97
+      [13/15] F1:0.80 Clarity:0.90 Precision:0.90
+      [14/15] F1:0.80 Clarity:0.90 Precision:1.00
+      [15/15] F1:1.00 Clarity:1.00 Precision:0.33
 
 ==================================================
 Prompt: acsdev/bug_to_user_story_v2
 ==================================================
 
 Métricas Derivadas:
-  - Helpfulness: 0.85 ✗
-  - Correctness: 0.78 ✗
+  - Helpfulness: 0.92 ✓
+  - Correctness: 0.90 ✗
 
 Métricas Base:
-  - F1-Score: 0.72 ✗
-  - Clarity: 0.87 ✗
-  - Precision: 0.83 ✗
+  - F1-Score: 0.90 ✗
+  - Clarity: 0.93 ✓
+  - Precision: 0.90 ✓
 
 --------------------------------------------------
-📊 MÉDIA GERAL: 0.8099
+📊 MÉDIA GERAL: 0.9084
 --------------------------------------------------
 
 ❌ STATUS: REPROVADO
-⚠️  Métricas abaixo de 0.9: helpfulness, correctness, f1_score, clarity, precision
-⚠️  Média atual: 0.8099 | Necessário: 0.9000
+⚠️  Métricas abaixo de 0.9: correctness, f1_score
+⚠️  Média atual: 0.9084 | Necessário: 0.9000
 
 ==================================================
 RESUMO FINAL
